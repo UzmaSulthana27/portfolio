@@ -28,7 +28,7 @@ export const ContactSection = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb=6">Contact Info</h3>
+            <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
@@ -73,9 +73,9 @@ export const ContactSection = () => {
               </div>
             </div>
           </div>
-          <div className="pt=8">
-            <h4 className="font-medium mb-4">Connect With Me</h4>
-            <div className="flex space-x-4 justify-center">
+          <div className="pt-8 md:pt-0">
+            <h4 className=" text-2xl font-medium mb-2">Connect With Me</h4>
+            <div className="flex space-x-4 justify-center mb-5">
               <a href="#" target="_blank">
                 <Linkedin />
               </a>

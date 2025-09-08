@@ -42,7 +42,7 @@ export const ProjectsSection = () => {
           Here are some of my recent projects.each project was carefully crafted
           with attention to detail,performance & user experience
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap_8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {projects.map((project, key) => (
             <div
               key={key}
