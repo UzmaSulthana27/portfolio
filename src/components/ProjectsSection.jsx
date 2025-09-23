@@ -9,7 +9,7 @@ const projects = [
     image: "public/Projects/ecommerce.png",
     tags: ["React"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/UzmaSulthana27/ecommerce",
   },
   {
     id: 1,
@@ -22,12 +22,12 @@ const projects = [
   },
   {
     id: 1,
-    title: "Youtube Clone",
-    Description: "A Youtube clone using react JS",
-    image: "public/Projects/youtube.png",
+    title: "Imgnest",
+    Description: "A website to search, preview, and download images effortlessly",
+    image: "/public/Projects/imgnest.png",
     tags: ["React"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/UzmaSulthana27/PhotoFinder",
   },
 ];
 
