@@ -7,7 +7,7 @@ const projects = [
     Description: "A beautiful ecommerce website using React",
     image: "/Projects/ecommerce.png", // ✅ fixed path
     tags: ["React"],
-    demoUrl: "#",
+    demoUrl: "https://shopwave-e.vercel.app/",
     githubUrl: "https://github.com/UzmaSulthana27/ecommerce",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     Description: "A detection of phishing website using ML & Flask",
     image: "/Projects/phising.png", // ✅ fixed path
     tags: ["Python", "Flask"],
-    demoUrl: "#",
+    demoUrl: "",
     githubUrl: "https://github.com/UzmaSulthana27/Phishing-website",
   },
   {
@@ -25,8 +25,8 @@ const projects = [
     Description: "A website to search, preview, and download images effortlessly",
     image: "/Projects/imgnest.png", // ✅ fixed path
     tags: ["React"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/UzmaSulthana27/PhotoFinder",
+    demoUrl: " https://imgnest.netlify.app/",
+    githubUrl: "https://github.com/UzmaSulthana27/ImgNest",
   },
 ];
 
