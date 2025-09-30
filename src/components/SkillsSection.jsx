@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub, FaCode } from "react-icons/fa";
-import { SiMysql} from "react-icons/si";
-
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaJava,
+  FaPython,
+  FaDatabase,
+  FaGitAlt,
+  FaGithub,
+  FaCode,
+} from "react-icons/fa";
+import { SiMysql, SiPostman } from "react-icons/si";
 
 // Skill data with icons
 const skills = [
@@ -17,10 +27,8 @@ const skills = [
 
   { name: "Git/GitHub", level: 80, category: "tools", icon: <FaGithub className="text-gray-800" /> },
   { name: "Eclipse", level: 80, category: "tools", icon: <FaCode className="text-purple-600" /> },
-//   { name: "VS Code", level: 90, category: "tools", icon: <SiVisualstudiocode className="text-blue-500" /> }, // ✅ fixed
+  { name: "Postman", level: 85, category: "tools", icon: <SiPostman className="text-orange-600" /> },
 ];
-
-
 
 const categories = ["all", "frontend", "programming", "database", "tools"];
 
@@ -28,7 +36,7 @@ export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [animated, setAnimated] = useState(false);
 
-  // Animate bars when mounted
+  // Animate circles when mounted
   useEffect(() => {
     const timeout = setTimeout(() => setAnimated(true), 200);
     return () => clearTimeout(timeout);
@@ -69,7 +77,7 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-transform duration-300"
+              className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-transform duration-300 flex flex-col items-center"
             >
               {/* Icon + Name */}
               <div className="flex items-center gap-3 mb-4">
@@ -77,20 +85,17 @@ export const SkillsSection = () => {
                 <h3 className="font-semibold text-lg">{skill.name}</h3>
               </div>
 
-              {/* Progress Bar */}
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: animated ? skill.level + "%" : "0%" }}
-                />
+              {/* Circular Level Badge */}
+              <div
+                className={cn(
+                  "w-20 h-20 flex items-center justify-center rounded-full font-bold text-white text-lg shadow-md transition-all duration-700",
+                  "bg-gradient-to-tr from-primary to-primary/70",
+                  animated ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                )}
+              >
+                {skill.level}%
               </div>
-
-              {/* Percentage */}
-              <div className="text-right mt-2">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              <p className="text-sm text-muted-foreground mt-2">Proficiency</p>
             </div>
           ))}
         </div>
