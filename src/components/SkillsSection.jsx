@@ -29,7 +29,7 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
-// Define skills grouped by category
+// Skills data
 const skills = {
   frontend: {
     title: "Frontend Development",
@@ -64,7 +64,6 @@ const skills = {
       { name: "GitHub", icon: <FaGithub className="text-gray-300" /> },
       { name: "Webpack", icon: <SiWebpack className="text-blue-400" /> },
       { name: "Redux", icon: <SiRedux className="text-purple-500" /> },
-      { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
       { name: "Vercel", icon: <SiVercel className="text-white" /> },
       { name: "Netlify", icon: <SiNetlify className="text-cyan-400" /> },
       { name: "Render", icon: <SiRender className="text-indigo-400" /> },
@@ -72,7 +71,7 @@ const skills = {
   },
 };
 
-// Skill Card Component (with Blur Mirror Effect)
+// Skill Card
 const SkillCard = ({ title, icon, items }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
@@ -80,45 +79,42 @@ const SkillCard = ({ title, icon, items }) => (
     transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
     whileHover={{ scale: 1.03 }}
     viewport={{ once: true, amount: 0.3 }}
-    
-    // Core Blur Mirror Classes
-    className="relative flex flex-col p-6 rounded-2xl border border-white/20 
-               bg-white/5 backdrop-blur-xl shadow-2xl group overflow-hidden 
-               transition-all duration-300 hover:border-white/40"
+    className="relative flex flex-col p-6 rounded-2xl border border-white/10 
+               bg-secondary/20 backdrop-blur-md shadow-lg group overflow-hidden 
+               transition-all duration-300 hover:border-white/20"
   >
-    
-    {/* Inner Reflection / Shine (The "Mirror" Touch) */}
+    {/* Subtle Reflection / Shine */}
     <div className="absolute inset-0 rounded-2xl opacity-0 
-                     bg-gradient-to-br from-white/20 to-transparent 
-                     transition-opacity duration-500 group-hover:opacity-100 
+                     bg-gradient-to-br from-white/5 to-transparent 
+                     transition-opacity duration-500 group-hover:opacity-20 
                      pointer-events-none z-0">
     </div>
 
-    {/* Outer Glow Effect (Ambient Light) */}
+    {/* Outer Glow Effect */}
     <div className="absolute inset-0 rounded-2xl 
-                    bg-gradient-to-tr from-purple-500/30 via-pink-500/20 to-indigo-500/30
-                    opacity-40 blur-3xl -z-10
-                    transition-all duration-500 group-hover:opacity-60"></div>
+                    bg-gradient-to-tr from-purple-500/20 via-pink-500/10 to-indigo-500/20
+                    opacity-20 blur-3xl -z-10
+                    transition-all duration-500 group-hover:opacity-30"></div>
 
-    {/* Header (z-10 ensures it stays above the reflection layer) */}
+    {/* Header */}
     <div className="flex items-center gap-3 mb-4 z-10">
-      <div className="p-2 rounded-lg bg-white/10">{icon}</div>
+      <div className="p-2 rounded-lg bg-white/5">{icon}</div>
       <h2 className="text-xl font-semibold text-white">{title}</h2>
     </div>
 
-    {/* Skills (z-10 ensures it stays above the reflection layer) */}
+    {/* Skills */}
     <div className="flex flex-wrap gap-3 z-10">
       {items.map((item, i) => (
         <motion.span
           key={i}
           whileHover={{
             scale: 1.1,
-            backgroundColor: "rgba(255,255,255,0.25)", // Stronger hover background
+            backgroundColor: "rgba(255, 255, 255, 0.08)",
           }}
           transition={{ duration: 0.15 }}
-          className="flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 
+          className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 
                      rounded-full text-gray-200 text-sm cursor-pointer transition-all 
-                     hover:border-white/40 shadow-md"
+                     hover:border-white/20 shadow-sm"
         >
           {item.icon} <span className="whitespace-nowrap">{item.name}</span>
         </motion.span>
@@ -131,23 +127,39 @@ export const SkillsSection = () => {
   return (
     <section
       id="skills"
-      // Assuming the parent component provides a dark background for the text-white to work well
-      className="py-24 px-6 md:px-12 lg:px-24 bg-transparent text-white"
+      className="relative py-24 px-6 md:px-12 lg:px-24 bg-transparent text-white overflow-hidden"
     >
-      <div className="container mx-auto max-w-6xl">
-        {/* Section Title with motion for entrance effect */}
-        <motion.h2 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-extrabold text-center mb-16 relative"
+      {/* Floating Gradient Background */}
+      <div className="absolute inset-0 -z-20">
+        <motion.div
+          animate={{ x: ["-10%", "10%", "-10%"], y: ["-10%", "10%", "-10%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[120%] h-[120%] bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 opacity-20 rounded-full filter blur-3xl -top-1/4 -left-1/4"
+        />
+        <motion.div
+          animate={{ x: ["10%", "-10%", "10%"], y: ["10%", "-10%", "10%"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-blue-400 via-cyan-400 to-purple-400 opacity-15 rounded-full filter blur-2xl top-1/3 left-1/4"
+        />
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-10">
+        {/* Section Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-extrabold text-center mb-16 relative"
         >
-          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Skills</span>
+          My{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            Skills
+          </span>
         </motion.h2>
 
+        {/* Skill Cards */}
         <div className="grid gap-10 md:grid-cols-3">
-          {/* Skill Cards using the data object */}
           <SkillCard {...skills.frontend} />
           <SkillCard {...skills.backend} />
           <SkillCard {...skills.tools} />

@@ -1,118 +1,160 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, CheckCircle2 } from "lucide-react";
 
 const projects = [
   {
     id: 1,
     title: "Ecommerce Website",
-    Description: "A beautiful ecommerce website using React",
-    image: "/Projects/ecommerce.png", // ✅ fixed path
-    tags: ["React"],
+    Description:
+      "A modern e-commerce platform that allows users to browse, add products to the cart, and complete purchases seamlessly.",
+    image: "/Projects/ecommerce.png",
     demoUrl: "https://shopwave-e.vercel.app/",
     githubUrl: "https://github.com/UzmaSulthana27/ecommerce",
+    points: [
+      "Dynamic product listing and search",
+      "Cart and checkout workflow with validation",
+      "Responsive, mobile-first design",
+      "Reusable React components and hooks",
+    ],
   },
   {
     id: 2,
     title: "Detection of Phishing Website",
-    Description: "A detection of phishing website using ML & Flask",
-    image: "/Projects/phising.png", // ✅ fixed path
-    tags: ["Python", "Flask"],
+    Description:
+      "A machine learning-based web app to detect phishing websites, helping users stay safe online.",
+    image: "/Projects/phising.png",
     demoUrl: "",
     githubUrl: "https://github.com/UzmaSulthana27/Phishing-website",
+    points: [
+      "Trained ML model for website classification",
+      "Flask API backend for real-time predictions",
+      "Clean, simple user interface",
+      "Improves cybersecurity awareness",
+    ],
   },
   {
     id: 3,
     title: "Imgnest",
-    Description: "A website to search, preview, and download images effortlessly",
-    image: "/Projects/imgnest.png", // ✅ fixed path
-    tags: ["React"],
-    demoUrl: " https://imgnest.netlify.app/",
+    Description:
+      "A sleek platform to search, preview, and download high-quality images from the Unsplash API effortlessly.",
+    image: "/Projects/imgnest.png",
+    demoUrl: "https://imgnest.netlify.app/",
     githubUrl: "https://github.com/UzmaSulthana27/ImgNest",
+    points: [
+      "Instant search with preview & download",
+      "Integration with Unsplash API",
+      "Smooth and responsive React UI",
+      "User-friendly interface with grid layout",
+    ],
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section
+      id="projects"
+      className="py-20 px-6 bg-gradient-to-b from-background to-muted/30"
+    >
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          🚀 Featured <span className="text-primary">Projects</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully crafted
-          with attention to detail, performance & user experience.
+        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+          A journey through my projects — combining design, performance, and modern tech stacks.
         </p>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+        {/* Projects */}
+        <div className="space-y-24">
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className={`flex flex-col md:flex-row items-start gap-10 md:gap-16 ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              {/* Image */}
-              <div className="overflow-hidden">
+              {/* Project Image */}
+              <div className="w-full md:w-1/2 transform transition duration-700 hover:scale-105 hover:rotate-1">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="rounded-xl shadow-xl transition duration-700 ease-in-out hover:shadow-2xl"
                 />
               </div>
 
-              {/* Card Content */}
-              <div className="p-4 sm:p-6">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 text-xs font-medium rounded-full border bg-secondary text-secondary-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-1">
+              {/* Project Details */}
+              <div className="w-full md:w-1/2 flex flex-col justify-start animate-fadeIn">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-3">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground mb-6 text-base leading-relaxed">
                   {project.Description}
                 </p>
 
-                {/* Links */}
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
+                {/* Key Points */}
+                <ul className="space-y-2 mb-6">
+                  {project.points.map((point, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-sm text-foreground/80"
+                    >
+                      <CheckCircle2 className="text-primary mt-0.5" size={18} />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-4">
+                  {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      className="px-6 py-2 bg-primary text-white rounded-md flex items-center gap-2 hover:scale-105 transition shadow-md"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={18} /> Live Demo
                     </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                  )}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    className="px-6 py-2 bg-gray-900 text-white rounded-md flex items-center gap-2 hover:scale-105 transition shadow-md"
+                  >
+                    <Github size={18} /> GitHub
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* GitHub Button */}
-        <div className="text-center mt-12">
+        {/* GitHub Profile Button */}
+        <div className="text-center mt-24">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 transition flex items-center gap-2 mx-auto w-fit"
             href="https://github.com/UzmaSulthana27"
             target="_blank"
           >
-            Check My GitHub <ArrowRight size={16} />
+            Explore More on GitHub <ArrowRight size={18} />
           </a>
         </div>
       </div>
+
+      {/* Inline animation */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
