@@ -31,8 +31,23 @@ const projects = [
       "Improves cybersecurity awareness",
     ],
   },
-  {
+   {
     id: 3,
+    title: "CineVerse",
+    Description:
+       "“A responsive and interactive movie discovery website built with React — delivering a cinematic browsing experience.",
+    image: "/Projects/Cineverse.png",
+    demoUrl: "https://cine-verse-two.vercel.app/",
+    githubUrl: "https://github.com/UzmaSulthana27/CineVerse",
+    points: [
+      "Highlights trending and popular movies with smooth transitions.",
+      "Fetches real-time movie data using a third-party API",
+      "Login/signup popup for personalized user access",
+      "Quickly find movies by category, rating, or keyword.",
+    ],
+  },
+  {
+    id: 4,
     title: "Imgnest",
     Description:
       "A sleek platform to search, preview, and download high-quality images from the Unsplash API effortlessly.",
