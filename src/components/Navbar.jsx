@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScorlled(window.screenY > 10);
+      setIsScorlled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,8 +35,8 @@ export const Navbar = () => {
           href="#herooo"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Uzma Sulthana</span>{" "}
-            Portfolio
+            <span className="text-glow text-foreground">Uzma </span>{" "}
+           Sulthana
           </span>
         </a>
 
@@ -60,7 +60,7 @@ export const Navbar = () => {
         </button>
         <div
           className={cn(
-            "fixed insert-0 bg-background/95  backdrop-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-background/95  backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
@@ -70,7 +70,7 @@ export const Navbar = () => {
           <div className="flex flex-col  space-y-8 text-xl">
             {navItems.map((item, key) => (
               <a
-                key={KeyRound}
+                key={key}
                 href={item.href}
                 className="text-foreground/80  hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}

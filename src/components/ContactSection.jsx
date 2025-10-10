@@ -76,7 +76,7 @@ export const ContactSection = () => {
           <div className="pt-8 md:pt-0">
             <h4 className=" text-2xl font-medium mb-2">Connect With Me</h4>
             <div className="flex space-x-4 justify-center mb-5">
-              <a href="#" target="_blank">
+              <a href="www.linkedin.com/in/uzma-sulthana-s-176a21323" target="_blank">
                 <Linkedin />
               </a>
               <a href="https://github.com/UzmaSulthana27" target="_blank">
