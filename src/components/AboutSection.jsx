@@ -40,10 +40,10 @@ export const AboutSection = () => {
                 ✉️ Get In Touch
               </a>
               <a
-                href="#"
-                className="px-6 py-2 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+                href="/Projects/Uzma-Sulthana-resume.pdf" target="_blank" rel="noopener noreferrer"
+                className="cosmic-button"
               >
-                📄 Download CV
+                📄 View My CV
               </a>
             </div>
           </div>

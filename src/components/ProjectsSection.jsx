@@ -35,7 +35,7 @@ const projects = [
     id: 3,
     title: "CineVerse",
     Description:
-       "“A responsive and interactive movie discovery website built with React — delivering a cinematic browsing experience.",
+       "A responsive and interactive movie discovery website built with React — delivering a cinematic browsing experience.",
     image: "/Projects/Cineverse.png",
     demoUrl: "https://cine-verse-two.vercel.app/",
     githubUrl: "https://github.com/UzmaSulthana27/CineVerse",
@@ -47,7 +47,22 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id:4,
+    title:"SpendSmart",
+    Description:" SpendSmart is a smart and user-friendly expense tracker web application designed to help users manage their finances efficiently.",
+    image:"/Projects/spendsmart.png",
+    demoUrl:"https://spend-smart-mu.vercel.app/",
+    githubUrl:"https://github.com/UzmaSulthana27/SpendSmart",
+    points:[
+      "Data persists even after page reload",
+      "View expense summaries and patterns",
+      "Convert or display values in INR, USD, and more",
+      "Built with Tailwind CSS for a minimal, modern design",
+
+    ],
+  },
+  {
+    id: 5,
     title: "Imgnest",
     Description:
       "A sleek platform to search, preview, and download high-quality images from the Unsplash API effortlessly.",
