@@ -1,21 +1,32 @@
-import { Home } from './pages/Home'
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { NotFound } from './pages/NotFound'
+import './index.css'
+import Cursor from './components/Cursor'
+import Navbar from './components/Navbar'
+import ParticleCanvas from './components/ParticleCanvas'
+import Hero from './components/Hero'
+import Marquee from './components/Marquee'
+import About from './components/About'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Experience from './components/Experience'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
-const App = () => {
+export default function App() {
   return (
-    <div>
-        <>
-        <BrowserRouter>
-        <Routes>
-            <Route index element={<Home/>} />
-            <Route path="*" element={<NotFound/>} />
-        </Routes>
-        </BrowserRouter>
-        </>
-     </div>
+    <>
+      <Cursor />
+      <ParticleCanvas />
+      <Navbar />
+      <main>
+        <Hero />
+        <Marquee />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
-
-export default App
