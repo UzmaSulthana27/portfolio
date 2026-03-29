@@ -9,7 +9,7 @@ const fade = (delay = 0) => ({
 export default function Hero() {
   return (
     <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', zIndex: 1, padding: '0 2rem' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '4rem' }}>
+      <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '4rem' }}>
 
         {/* Left: Text */}
         <div>
@@ -45,8 +45,8 @@ export default function Hero() {
         </div>
 
         {/* Right: Rotating Badge */}
-        <motion.div initial={{ opacity: 0, scale: .8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8, delay: .6 }}
-          style={{ position: 'relative', width: 160, height: 160, flexShrink: 0 }} className="hidden md:block">
+        <motion.div className="hero-badge" initial={{ opacity: 0, scale: .8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8, delay: .6 }}
+          style={{ position: 'relative', width: 160, height: 160, flexShrink: 0 }}>
           <div className="badge-ring" style={{ position: 'absolute', inset: 0 }}>
             <svg viewBox="0 0 160 160" style={{ position: 'absolute', width: '100%', height: '100%' }}>
               <defs>

@@ -31,3 +31,51 @@ a,button{cursor:none}
 .btn-primary:hover{background:var(--accent3)}
 .btn-ghost{border:1px solid var(--border-bright);color:var(--text);padding:.8rem 1.8rem}
 .btn-ghost:hover{border-color:rgba(167,139,250,.4);color:var(--accent)}
+
+/* Global mobile fixes */
+html, body { overflow-x: hidden; }
+.wrapper { max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; min-width: 0; }
+
+/* Navbar mobile safe behavior */
+/* desktop links are hidden by utility class on mobile and shown on md. */
+
+/* Hero */
+#hero .hero-grid { grid-template-columns: 1fr auto; gap: 4rem; }
+#hero .hero-badge { display: block; }
+@media (max-width: 768px) {
+  .wrapper { padding: 0 1rem; }
+  #hero .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  #hero .hero-badge { display: none !important; }
+  #hero section, #hero { min-height: auto; padding: 3rem 0; }
+
+  /* About */
+  #about .about-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  #about .about-stats { grid-template-columns: 1fr !important; }
+  #about .about-stats > div { min-width: 0; }
+
+  /* Projects */
+  #work .project-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  #work .project-grid .project-info { order: 1 !important; }
+  #work .project-grid .project-mockup { order: 2 !important; display: block !important; width: 100% !important; max-width: 100% !important; min-height: 220px !important; }
+  #work .project-mockup-inner { overflow: hidden !important; height: 100% !important; }
+  #work .project-mockup-inner img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
+
+  /* Experience */
+  #experience .experience-item { grid-template-columns: 1fr !important; gap: 1rem !important; padding-left: 0 !important; }
+  #experience .experience-item > div:first-child { margin-bottom: 1rem; }
+
+  /* Contact */
+  #contact .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  #contact .contact-form-grid { grid-template-columns: 1fr !important; }
+
+  /* Navbar support */
+  nav { position: static !important; }
+  nav .hamburger { display: block !important; }
+}
+
+@media (max-width: 480px) {
+  .btn-primary, .btn-ghost { padding: .7rem 1rem; font-size: .68rem; }
+  h1, h2, h3 { font-size: clamp(1.6rem, 6vw, 3.5rem); }
+  .wrapper { padding: 0 .75rem; }
+}
+

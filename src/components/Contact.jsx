@@ -70,7 +70,7 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
           {/* Left */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: .7, delay: .1 }}>
             <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 'clamp(2.5rem,5vw,4.5rem)', fontWeight: 400, letterSpacing: '-.03em', lineHeight: 1.0, marginBottom: '1.5rem' }}>
@@ -100,7 +100,7 @@ export default function Contact() {
           {/* Right: Form */}
           <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: .7, delay: .2 }}>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '.8rem' }} onSubmit={e => e.preventDefault()}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.8rem' }}>
+              <div className="contact-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.8rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
                   <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '.6rem', color: 'var(--muted)', letterSpacing: '.15em', textTransform: 'uppercase' }}>Name</label>
                   <input style={inputStyle} placeholder="Your name" />

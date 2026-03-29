@@ -62,6 +62,7 @@ export default function Experience() {
               <motion.div key={i} ref={itemRef}
                 initial={{ opacity: 0, x: -30 }} animate={itemInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: .6, delay: i * .1 }}
+                className="experience-item"
                 style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '2rem', padding: '2rem 0', borderBottom: '1px solid var(--border)', position: 'relative', paddingLeft: '2rem' }}>
 
                 {/* Timeline line */}

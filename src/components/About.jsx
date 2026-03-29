@@ -23,7 +23,7 @@ export default function About() {
           <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 400, letterSpacing: '-.02em' }}>About Me</h2>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '5rem', alignItems: 'start' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '5rem', alignItems: 'start' }}>
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: .7, delay: .1 }}>
             <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--muted2)', marginBottom: '1.2rem' }}>
               Hey! I'm Uzma — a <strong style={{ color: 'var(--text)' }}>Full Stack Developer</strong> from Bangalore
@@ -42,7 +42,7 @@ export default function About() {
             <a href="#work" className="btn-ghost" style={{ display: 'inline-flex' }}>View Projects ↓</a>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: .7, delay: .2 }}
+          <motion.div className="about-stats" initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: .7, delay: .2 }}
             style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             {stats.map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: .3 + i * .1 }}

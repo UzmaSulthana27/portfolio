@@ -86,6 +86,7 @@ function TiltCard({ project, reverse }) {
 
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 60 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: .8, ease: 'easeOut' }}
+      className="project-card"
       style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'center', overflow: 'hidden', borderTop: '1px solid var(--border)' }}>
 
       {/* BG gradient */}
@@ -100,10 +101,9 @@ function TiltCard({ project, reverse }) {
       <div style={{ position: 'absolute', width: 280, height: 280, borderRadius: '50%', background: project.orbColor, filter: 'blur(60px)', animation: 'float-orb 8s ease-in-out infinite', pointerEvents: 'none', ...project.orbPos }} />
 
       <div className="wrapper" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-        <div ref={cardRef} style={{ display: 'grid', gridTemplateColumns: reverse ? 'auto 1fr' : '1fr auto', gap: '4rem', alignItems: 'center', willChange: 'transform' }}>
-
+        <div ref={cardRef} className="project-grid" style={{ display: 'grid', gridTemplateColumns: reverse ? 'auto 1fr' : '1fr auto', gap: '4rem', alignItems: 'center', willChange: 'transform' }}>
           {/* Info */}
-          <div style={{ order: reverse ? 2 : 1 }}>
+          <div className="project-info" style={{ order: reverse ? 2 : 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '.65rem', color: 'var(--muted)', letterSpacing: '.15em' }}>Project {project.num}</span>
               {project.featured && <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '.55rem', letterSpacing: '.15em', background: 'rgba(167,139,250,.15)', border: '1px solid rgba(167,139,250,.3)', color: 'var(--accent)', padding: '2px 8px' }}>FEATURED</span>}
@@ -134,8 +134,8 @@ function TiltCard({ project, reverse }) {
           </div>
 
           {/* Browser mockup */}
-          <div style={{ order: reverse ? 1 : 2, width: 420, maxWidth: '100%' }}>
-            <div style={{ border: '1px solid rgba(167,139,250,.15)', borderRadius: 8, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,.4)', transform: `rotateY(${reverse ? '6deg' : '-6deg'}) rotateX(3deg)`, transition: 'box-shadow .4s' }}>
+          <div className="project-mockup" style={{ order: reverse ? 2 : 2, width: '100%', maxWidth: 420, minHeight: 220 }}>
+            <div className="project-mockup-inner" style={{ border: '1px solid rgba(167,139,250,.15)', borderRadius: 8, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,.4)', transform: `rotateY(${reverse ? '6deg' : '-6deg'}) rotateX(3deg)`, transition: 'box-shadow .4s', height: '100%' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '10px 14px', background: 'rgba(22,18,42,.9)', borderBottom: '1px solid rgba(255,255,255,.06)' }}>
                 <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f57' }} />
                 <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#febc2e' }} />
