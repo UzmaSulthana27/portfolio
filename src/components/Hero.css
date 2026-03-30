@@ -2,6 +2,7 @@
   .hero-grid-responsive {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
+    margin-top: -1.2rem; /* shift text a bit higher */
   }
 
   .hero-badge-mobile {
@@ -9,7 +10,8 @@
   }
 
   #hero {
-    padding: 1rem 2rem 2rem 2rem !important;
+    padding: 0.5rem 2rem 1.5rem 2rem !important;
+    align-items: flex-start !important;
   }
 
   #hero > div:last-child {
