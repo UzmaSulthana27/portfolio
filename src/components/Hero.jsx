@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import './Hero.css'
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -8,12 +9,12 @@ const fade = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', zIndex: 1, padding: '0 2rem' }}>
-      <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '4rem' }}>
+    <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', zIndex: 1, padding: '5rem 2rem 5rem 2rem' }}>
+      <div className="hero-grid-responsive" style={{ maxWidth: 1200, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '4rem' }}>
 
         {/* Left: Text */}
         <div>
-          <motion.div {...fade(0.1)}
+          <motion.div {...fade(0.1)} className="hero-badge-mobile"
             style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '.7rem', letterSpacing: '.25em', color: 'var(--accent)', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
             <span style={{ width: 28, height: 1, background: 'var(--accent)', display: 'inline-block' }} />
             Full Stack Developer

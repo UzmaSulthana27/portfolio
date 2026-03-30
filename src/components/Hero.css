@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  .hero-grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .hero-badge-mobile {
+    display: none !important;
+  }
+
+  #hero {
+    padding: 1rem 2rem 2rem 2rem !important;
+  }
+
+  #hero > div:last-child {
+    display: none !important;
+  }
+}
