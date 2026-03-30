@@ -44,20 +44,26 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Rotating Badge */}
-        <motion.div className="hero-badge" initial={{ opacity: 0, scale: .8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8, delay: .6 }}
-          style={{ position: 'relative', width: 160, height: 160, flexShrink: 0 }}>
-          <div className="badge-ring" style={{ position: 'absolute', inset: 0 }}>
-            <svg viewBox="0 0 160 160" style={{ position: 'absolute', width: '100%', height: '100%' }}>
-              <defs>
-                <path id="circ" d="M 80,80 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
-              </defs>
-              <text fill="#7c6f9a" fontFamily="JetBrains Mono" fontSize="9.5" letterSpacing="5">
-                <textPath href="#circ">FULL STACK DEVELOPER ✦ OPEN TO WORK ✦ </textPath>
-              </text>
-            </svg>
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>⚡</div>
-          </div>
+        {/* Right: Hero Image */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, y: 20 }} 
+          animate={{ opacity: 1, scale: 1, y: 0 }} 
+          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          style={{ flexShrink: 0, position: 'relative' }}
+        >
+          <motion.img 
+            src="/hero-image.png" 
+            alt="Uzma Sulthana - Full Stack Developer"
+            style={{ 
+              width: '100%', 
+              height: 'auto', 
+              maxWidth: 550, 
+              display: 'block',
+              filter: 'drop-shadow(0 20px 40px rgba(124, 111, 154, 0.15))'
+            }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 3, delay: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          />
         </motion.div>
 
       </div>
